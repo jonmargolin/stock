@@ -16,7 +16,7 @@ export class StockList{
      }
      public checkStockExist(stock: string): boolean{
          if(this.stockArray.indexOf(stock)> -1){
-             return  false
+             this.socket.emitData(JSON.stringify({tables: this.dataArray}), 'data');
          }
          else {
              this.stockArray.push(stock)

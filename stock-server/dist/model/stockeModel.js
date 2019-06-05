@@ -17,10 +17,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const https = __importStar(require("https"));
 const socketData_1 = require("../socket/socketData");
-const apiKey = "CS6MZNR26QSS3W1H";
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const apiKey = process.env.apiKey;
 class StockList {
     constructor() {
         this.stockArray = [];
@@ -34,7 +39,7 @@ class StockList {
     }
     checkStockExist(stock) {
         if (this.stockArray.indexOf(stock) > -1) {
-            return false;
+            this.socket.emitData(JSON.stringify({ tables: this.dataArray }), 'data');
         }
         else {
             this.stockArray.push(stock);
@@ -101,7 +106,7 @@ class StockList {
                 });
             })
                 .on('error', err => {
-                console.log('error' + err.message);
+                resolve({ error: 'can not get  data' });
             });
         }));
         // })

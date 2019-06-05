@@ -8,7 +8,7 @@ const index_1 = __importDefault(require("./index"));
 // initialize configuration
 dotenv_1.default.config();
 //const port = process.env.SERVER_PORT;
-const port = 5000;
+const port = process.env.SERVER_PORT;
 index_1.default.listen(port, () => {
     // tslint:disable-next-line:no-console
     console.log("Express server listening on port " + port);

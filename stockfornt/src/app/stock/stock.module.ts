@@ -12,21 +12,21 @@ import { StockTableContainerComponent } from './components/stock-table-container
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 export function highchartsModules() {
-	// apply Highcharts Modules to this array
-	return [stock, more];
+  // apply Highcharts Modules to this array
+  return [stock, more];
 }
 @NgModule({
-	declarations: [
-		SearchBarComponent,
-		StockContainerComponent,
-		StockNameListComponent,
-		StockTableComponent,
-		StockTableContainerComponent
-	],
-	imports: [CommonModule, HttpClientModule, ChartModule, ScrollingModule],
-	providers: [
-		{ provide: HIGHCHARTS_MODULES, useFactory: highchartsModules } // add as factory to your providers
-	],
-	exports: [StockContainerComponent]
+  declarations: [
+    SearchBarComponent,
+    StockContainerComponent,
+    StockNameListComponent,
+    StockTableComponent,
+    StockTableContainerComponent
+  ],
+  imports: [CommonModule, HttpClientModule, ChartModule, ScrollingModule],
+  providers: [
+    { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules } // add as factory to your providers
+  ],
+  exports: [StockContainerComponent]
 })
 export class StockModule {}

@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-	production: false,
-	stockUrl: 'https://www.alphavantage.co/query',
-	stockApiKey: 'CS6MZNR26QSS3W1H',
-	bas_url: 'http://localhost:5000'
+  production: false,
+  stockUrl: 'https://www.alphavantage.co/query',
+  stockApiKey: 'CS6MZNR26QSS3W1H',
+  bas_url: 'http://localhost:5000'
 };
 
 /*

@@ -5,16 +5,16 @@ import { Table } from './table.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root'
 })
 export class TableQuery extends QueryEntity<TableState, Table> {
-	constructor(protected store: TableStore) {
-		super(store);
-	}
-	getTable(): Observable<Table[]> {
-		return this.selectAll();
-	}
-	getError(): Observable<string> {
-		return this.selectError();
-	}
+  constructor(protected store: TableStore) {
+    super(store);
+  }
+  getTable(): Observable<Table[]> {
+    return this.selectAll();
+  }
+  getError(): Observable<string> {
+    return this.selectError();
+  }
 }

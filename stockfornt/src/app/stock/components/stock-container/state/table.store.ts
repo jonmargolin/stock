@@ -4,16 +4,16 @@ import { createTable, Table } from './table.model';
 
 export interface TableState extends EntityState<Table> {}
 const initialState: EntityState<Table> = {
-	entities: {},
-	error: undefined,
-	ids: [],
-	loading: true
+  entities: {},
+  error: undefined,
+  ids: [],
+  loading: true
 };
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'table' })
 export class TableStore extends EntityStore<TableState, Table> {
-	constructor() {
-		super(initialState);
-	}
+  constructor() {
+    super(initialState);
+  }
 }
