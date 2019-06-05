@@ -1,0 +1,15 @@
+<div>
+	<app-search-bar (search)="startSearch($event)"></app-search-bar>
+	<app-stock-name-list
+		class="stockList"
+		*ngIf="listData"
+		[data]="listData"
+		(ticket)="getTicketData($event)"
+	></app-stock-name-list>
+</div>
+<div *ngIf="!loader">
+	<app-stock-table-container [data]="tableData$ | async" (StockRemove)="removeStock($event)"></app-stock-table-container>
+</div>
+<div class="noData" *ngIf="loader">
+	<span> No data to show </span>
+</div>

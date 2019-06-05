@@ -1,0 +1,5 @@
+<cdk-virtual-scroll-viewport [itemSize]="400" [minBufferPx]="100" [maxBufferPx]="250">
+	<div *cdkVirtualFor="let item of data">
+		<app-stock-table [data]="item" (StockRemove)="removeStock($event)"></app-stock-table>
+	</div>
+</cdk-virtual-scroll-viewport>

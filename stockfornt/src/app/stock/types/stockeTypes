@@ -1,0 +1,8 @@
+
+export interface SearchTypes {
+
+  [key: string]: string;
+}
+export interface SearchMatch {
+  bestMatches: SearchTypes[];
+}

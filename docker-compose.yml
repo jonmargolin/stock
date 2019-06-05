@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: angular
+    build:
+      context: ./stockfornt
+    ports:
+      - "80:80"
+    depends_on:
+      - node
+  node:
+    container_name: node_rest
+    build:
+      context: ./stock-server
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./stock-server/.env
+    command: >
+      sh -c "npm run start"
+
