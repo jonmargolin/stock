@@ -29,7 +29,7 @@
     "ejs": "2.6.1",
     "express": "4.10.0",
     "mongoose": "5.5.4",
-    "socket.io": "2.0.3"
+    "socket.io": "2.5.0"
   },
   "devDependencies": {
     "@types/dotenv": "6.1.1",
